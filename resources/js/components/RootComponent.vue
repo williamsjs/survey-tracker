@@ -1,6 +1,11 @@
 <template>
     <div class="container">
-        {{authenticated}}
+        <template v-if="authenticated">
+            authenticated
+        </template>
+        <template v-else>
+            not Authenticated
+        </template>
     </div>
 </template>
 
@@ -8,8 +13,7 @@
     export default {
         props: ['authenticated'],
         mounted() {
-            console.log('Component mounted.')
-            console.log(this.authenticated);
+            this.authenticated = JSON.parse(this.authenticated);
         }
     }
 </script>
