@@ -21,7 +21,7 @@
   </head>
   <body>
       <div id="app">
-        <root-component></root-component>
+        <root-component authenticated="{!! Auth::check() ? 'true' : 'false' !!}"></root-component>
       </div>
   </body>
 </html>
